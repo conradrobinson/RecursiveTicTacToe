@@ -68,6 +68,7 @@ class Cell {
             //we are a root cell so update the state of it
             if (this.owner == undefined) {
                 this.owner = turnTaker
+                clickSucceeded = true
             }
         }
         

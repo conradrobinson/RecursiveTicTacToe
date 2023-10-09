@@ -6,7 +6,7 @@ canvasElement.width = width
 canvasElement.height = width
 canvasElement.style.width = `${width}px`;
 canvasElement.style.height = `${width}px`;
-
+clickSucceeded = false
 lastMousePos = {x: undefined, y: undefined}
 turnTaker = "x"
 cell = new Cell(3, 0, 0, 0, 0, width*3, width*3, false)
@@ -28,12 +28,14 @@ function getMousePos(canvas, evt) {
   }, false);
   canvasElement.addEventListener('click', function(evt) {
      cell.updateState(getMousePos(canvasElement, evt), turnTaker);
-     if (turnTaker == "x") {
-        turnTaker = "o"
-        document.body.style.backgroundColor = "#0000FF"
-     } else {
-        turnTaker = "x"
-        document.body.style.backgroundColor = "#FF0000"
-
-     }
+     if (clickSucceeded) {
+        if (turnTaker == "x") {
+            turnTaker = "o"
+            document.body.style.backgroundColor = "#0000FF"
+        } else {
+            turnTaker = "x"
+            document.body.style.backgroundColor = "#FF0000"
+        }
+        clickSucceeded = false
+    }
   }, false);

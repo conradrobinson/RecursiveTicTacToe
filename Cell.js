@@ -31,7 +31,12 @@ class Cell {
             }
         } else {
             if (this.hovered) {
-                canvas.fillStyle = "#FF00FF22" //lightly purple
+                if (turnTaker == "o") {
+                    canvas.fillStyle = "#0000FF44";
+                }
+                if (turnTaker == "x") {
+                    canvas.fillStyle = "#FF000044"
+                }
             } else {
                 if (this.depth == 0) {
                     canvas.fillStyle = "#FFFFFF" //blank 

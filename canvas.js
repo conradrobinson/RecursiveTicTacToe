@@ -9,7 +9,7 @@ canvasElement.style.height = `${width}px`;
 clickSucceeded = false
 lastMousePos = {x: undefined, y: undefined}
 turnTaker = "x"
-cell = new Cell(3, 0, 0, 0, 0, width*3, width*3, false)
+cell = new Cell(2, 0, 0, 0, 0, width*3, width*3, false)
 function update() {
     requestAnimationFrame(update);
     cell.update(lastMousePos, false)
